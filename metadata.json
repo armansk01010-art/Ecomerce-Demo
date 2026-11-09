@@ -1,0 +1,6 @@
+{
+  "name": "MAISON NOVE - Modern Luxury Fashion",
+  "description": "Discover MAISON NOVE's modern luxury fashion collection. Premium shirts, trousers, jackets, dresses, and co-ords crafted with minimal, sophisticated editorial design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

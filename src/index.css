@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-ivory: #F7F5F0;
+    --text-charcoal: #202020;
+    --accent-beige: #D8CFC1;
+    --surface-light: #FFFFFF;
+    --border-subtle: #E6E1D7;
+  }
+}
+
+@theme {
+  --font-serif: "Bodoni Moda", serif;
+  --font-sans: "DM Sans", sans-serif;
+  
+  --color-ivory: #F7F5F0;
+  --color-ivory-light: #FAF8F5;
+  --color-charcoal: #202020;
+  --color-charcoal-muted: #3D3D3D;
+  --color-beige: #D8CFC1;
+  --color-beige-light: #EBE5DB;
+  --color-sand: #E2DACD;
+}
+
+/* Custom Scrollbar for Luxury Aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F5F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8CFC1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #202020;
+}
+
+.font-serif-heading {
+  font-family: 'Bodoni Moda', serif;
+}
+
+.font-sans-body {
+  font-family: 'DM Sans', sans-serif;
+}
