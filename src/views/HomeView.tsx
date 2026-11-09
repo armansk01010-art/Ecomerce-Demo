@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
 import { ProductCard } from '../components/ProductCard';
-import { ArrowRight, Sparkles, Feather, Scissors, Compass } from 'lucide-react';
+import { ArrowRight, Feather, Scissors } from 'lucide-react';
 
 export const HomeView: React.FC = () => {
   const { products, setView, setCategory, setGender } = useShop();
+  const [heroLoaded, setHeroLoaded] = useState(false);
 
   const newArrivals = products.filter(p => p.isNewArrival).slice(0, 4);
   const bestsellers = products.filter(p => p.isBestseller).slice(0, 4);
@@ -22,12 +23,25 @@ export const HomeView: React.FC = () => {
       
       {/* 1. EDITORIAL HERO BANNER */}
       <section className="relative w-full bg-[#202020] text-[#F7F5F0] overflow-hidden min-h-[80vh] flex items-center">
+        {/* Skeleton loader background */}
+        {!heroLoaded && (
+          <div className="absolute inset-0 bg-[#262626] animate-pulse" />
+        )}
+
         {/* Hero Background Image */}
         <div className="absolute inset-0 z-0 opacity-75 mix-blend-luminosity">
           <img 
-            src="/src/assets/images/hero_editorial_campaign_1794217069077.jpg" 
+            src="/images/hero-editorial-campaign.webp" 
             alt="MAISON NOVE Editorial Campaign"
-            className="w-full h-full object-cover object-center"
+            width={1600}
+            height={900}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            onLoad={() => setHeroLoaded(true)}
+            className={`w-full h-full object-cover object-center transition-opacity duration-700 ${
+              heroLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#202020] via-[#202020]/40 to-black/20" />
         </div>
@@ -79,11 +93,15 @@ export const HomeView: React.FC = () => {
           {/* Women Card */}
           <div 
             onClick={() => handleGenderSelect('Women')}
-            className="group relative h-[450px] overflow-hidden cursor-pointer bg-[#202020] border border-[#E6E1D7]"
+            className="group relative h-[450px] overflow-hidden cursor-pointer bg-[#EBE5DB] border border-[#E6E1D7]"
           >
             <img 
-              src="/src/assets/images/women_silk_dress_1794217084262.jpg" 
+              src="/images/women-silk-dress-primary.webp" 
               alt="Women's Collection"
+              width={800}
+              height={1000}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-transform duration-700 ease-out"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -101,11 +119,15 @@ export const HomeView: React.FC = () => {
           {/* Men Card */}
           <div 
             onClick={() => handleGenderSelect('Men')}
-            className="group relative h-[450px] overflow-hidden cursor-pointer bg-[#202020] border border-[#E6E1D7]"
+            className="group relative h-[450px] overflow-hidden cursor-pointer bg-[#EBE5DB] border border-[#E6E1D7]"
           >
             <img 
-              src="/src/assets/images/lookbook_men_collection_1794217069603.jpg" 
+              src="/images/lookbook-men-collection.webp" 
               alt="Men's Collection"
+              width={800}
+              height={1000}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-transform duration-700 ease-out"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -150,10 +172,14 @@ export const HomeView: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <div className="lg:col-span-6 relative aspect-16/9 lg:aspect-4/3 overflow-hidden border border-[#D8CFC1]">
+            <div className="lg:col-span-6 relative aspect-16/9 lg:aspect-4/3 overflow-hidden border border-[#D8CFC1] bg-[#D8CFC1]">
               <img 
-                src="/src/assets/images/atelier_craftsmanship_1794217070026.jpg" 
+                src="/images/atelier-craftsmanship.webp" 
                 alt="MAISON NOVE Craftsmanship Studio"
+                width={1200}
+                height={900}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>

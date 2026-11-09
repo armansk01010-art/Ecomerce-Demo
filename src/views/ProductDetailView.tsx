@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useShop } from '../context/ShopContext';
 import { ProductCard } from '../components/ProductCard';
 import { ProductColor, Size } from '../types';
@@ -13,11 +13,38 @@ export const ProductDetailView: React.FC = () => {
   const [selectedSize, setSelectedSize] = useState<Size>(product.sizes[0] || 'M');
   const [selectedImage, setSelectedImage] = useState<string>(product.primaryImage);
   const [quantity, setQuantity] = useState<number>(1);
+  const [mainImgLoaded, setMainImgLoaded] = useState<boolean>(false);
+  const [mainImgError, setMainImgError] = useState<boolean>(false);
 
   // Accordion toggle state
   const [openSection, setOpenSection] = useState<'composition' | 'care' | 'delivery' | null>('composition');
 
   const inWish = isInWishlist(product.id);
+
+  // Sync selectedImage when product changes
+  useEffect(() => {
+    setSelectedImage(product.primaryImage);
+    setSelectedColor(product.colors[0] || { name: 'Natural', hex: '#E2DACD' });
+    setSelectedSize(product.sizes[0] || 'M');
+    setMainImgLoaded(false);
+    setMainImgError(false);
+
+    // Preload secondary and gallery images so thumbnail clicks are instantaneous
+    if (product.gallery && product.gallery.length > 0) {
+      product.gallery.forEach(imgUrl => {
+        const img = new Image();
+        img.src = imgUrl;
+      });
+    }
+  }, [product]);
+
+  const handleThumbnailClick = (imgUrl: string) => {
+    if (selectedImage !== imgUrl) {
+      setMainImgLoaded(false);
+      setMainImgError(false);
+      setSelectedImage(imgUrl);
+    }
+  };
 
   const handleAddBag = () => {
     addToCart(product, selectedColor, selectedSize, quantity);
@@ -50,15 +77,37 @@ export const ProductDetailView: React.FC = () => {
         {/* Gallery Column (Left 7 Cols) */}
         <div className="lg:col-span-7 space-y-4">
           
-          {/* Main Selected Image */}
-          <div className="relative aspect-3/4 w-full bg-[#F2EFE9] border border-[#E6E1D7] overflow-hidden">
-            <img 
-              src={selectedImage || product.primaryImage} 
-              alt={product.name}
-              className="w-full h-full object-cover object-center transition-all duration-500"
-            />
+          {/* Main Selected Image Area with Skeleton Placeholder */}
+          <div className="relative aspect-3/4 w-full bg-[#EBE5DB] border border-[#E6E1D7] overflow-hidden">
+            {/* Skeleton loader state */}
+            {!mainImgLoaded && !mainImgError && (
+              <div className="absolute inset-0 bg-gradient-to-r from-[#EBE5DB] via-[#F7F5F0] to-[#EBE5DB] animate-pulse" />
+            )}
+
+            {!mainImgError ? (
+              <img 
+                src={selectedImage} 
+                alt={product.name}
+                width={1200}
+                height={1600}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                onLoad={() => setMainImgLoaded(true)}
+                onError={() => setMainImgError(true)}
+                className={`w-full h-full object-cover object-center transition-opacity duration-300 ${
+                  mainImgLoaded ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
+            ) : (
+              <div className="w-full h-full flex flex-col items-center justify-center bg-[#EBE5DB] text-[#202020] p-6 text-center">
+                <span className="font-serif-heading text-xl font-bold">{product.name}</span>
+                <span className="text-xs text-[#202020]/60 mt-1 uppercase tracking-wider">{product.subtitle}</span>
+              </div>
+            )}
+
             {product.isNewArrival && (
-              <span className="absolute top-4 left-4 bg-[#202020] text-[#F7F5F0] text-[10px] uppercase tracking-[0.2em] px-3 py-1 font-medium">
+              <span className="absolute top-4 left-4 bg-[#202020] text-[#F7F5F0] text-[10px] uppercase tracking-[0.2em] px-3 py-1 font-medium z-10">
                 NEW ARRIVAL
               </span>
             )}
@@ -70,12 +119,23 @@ export const ProductDetailView: React.FC = () => {
               {product.gallery.map((img, idx) => (
                 <button
                   key={idx}
-                  onClick={() => setSelectedImage(img)}
-                  className={`relative w-20 h-26 bg-[#F2EFE9] border transition-all shrink-0 overflow-hidden ${
-                    selectedImage === img ? 'border-[#202020] ring-1 ring-[#202020]' : 'border-[#E6E1D7] opacity-75 hover:opacity-100'
+                  onClick={() => handleThumbnailClick(img)}
+                  className={`relative w-20 h-26 bg-[#EBE5DB] border transition-all shrink-0 overflow-hidden ${
+                    selectedImage === img ? 'border-[#202020] ring-1 ring-[#202020]' : 'border-[#E6E1D7] opacity-80 hover:opacity-100'
                   }`}
                 >
-                  <img src={img} alt={`${product.name} thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
+                  <img 
+                    src={img} 
+                    alt={`${product.name} thumbnail ${idx + 1}`}
+                    width={150}
+                    height={200}
+                    loading="lazy"
+                    decoding="async"
+                    onError={(e: any) => {
+                      e.target.style.display = 'none';
+                    }}
+                    className="w-full h-full object-cover" 
+                  />
                 </button>
               ))}
             </div>

@@ -38,10 +38,14 @@ export const AboutView: React.FC = () => {
             </p>
           </div>
 
-          <div className="lg:col-span-6 relative aspect-4/3 overflow-hidden border border-[#D8CFC1]">
+          <div className="lg:col-span-6 relative aspect-4/3 overflow-hidden border border-[#D8CFC1] bg-[#EBE5DB]">
             <img 
-              src="/src/assets/images/atelier_craftsmanship_1794217070026.jpg" 
+              src="/images/atelier-craftsmanship.webp" 
               alt="Atelier Craftsman Pattern Cutting"
+              width={1200}
+              height={900}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover"
             />
           </div>

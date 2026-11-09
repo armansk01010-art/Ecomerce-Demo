@@ -11,6 +11,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { setView, toggleWishlist, isInWishlist, addToCart } = useShop();
   const [isHovered, setIsHovered] = useState(false);
   const [imgError, setImgError] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const inWish = isInWishlist(product.id);
 
@@ -39,21 +40,31 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleCardClick}
     >
-      {/* Product Image Frame */}
-      <div className="relative aspect-3/4 w-full bg-[#F2EFE9] overflow-hidden">
+      {/* Product Image Frame with Aspect Ratio & Skeleton Placeholder */}
+      <div className="relative aspect-3/4 w-full bg-[#EBE5DB] overflow-hidden">
+        {/* Skeleton loader state */}
+        {!isLoaded && !imgError && (
+          <div className="absolute inset-0 bg-gradient-to-r from-[#EBE5DB] via-[#F7F5F0] to-[#EBE5DB] animate-pulse" />
+        )}
+
         {!imgError ? (
           <img 
             src={displayImg} 
             alt={product.name}
-            onError={() => setImgError(true)}
+            width={600}
+            height={800}
             loading="lazy"
-            referrerPolicy="no-referrer"
-            className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
+            decoding="async"
+            onLoad={() => setIsLoaded(true)}
+            onError={() => setImgError(true)}
+            className={`w-full h-full object-cover object-center transform group-hover:scale-105 transition-all duration-700 ease-out ${
+              isLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
           />
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center bg-[#EBE5DB] text-[#202020] p-4 text-center">
-            <span className="font-serif-heading text-lg font-bold">{product.name}</span>
-            <span className="text-xs text-[#202020]/60 mt-1 uppercase tracking-wider">{product.category}</span>
+            <span className="font-serif-heading text-sm font-bold text-[#202020]">{product.name}</span>
+            <span className="text-[10px] text-[#202020]/60 mt-1 uppercase tracking-wider">{product.category}</span>
           </div>
         )}
 

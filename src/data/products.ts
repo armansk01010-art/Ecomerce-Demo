@@ -15,12 +15,12 @@ export const PRODUCTS: Product[] = [
       { name: 'Warm Terracotta', hex: '#A36B56' }
     ],
     sizes: ['S', 'M', 'L', 'XL'],
-    primaryImage: '/src/assets/images/tailored_linen_jacket_1794217084028.jpg',
-    secondaryImage: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=1000&auto=format&fit=crop',
+    primaryImage: '/images/tailored-linen-jacket-primary.webp',
+    secondaryImage: '/images/jacket-secondary.webp',
     gallery: [
-      '/src/assets/images/tailored_linen_jacket_1794217084028.jpg',
-      'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=1000&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1548624149-f1e1f570081e?q=80&w=1000&auto=format&fit=crop'
+      '/images/tailored-linen-jacket-primary.webp',
+      '/images/jacket-secondary.webp',
+      '/images/jacket-gallery-3.webp'
     ],
     description: 'Masterfully structured double-breasted jacket spun from pure European flax linen. Features sharp peak lapels, horn buttons, and an unstructured shoulder designed for effortless timeless layering.',
     composition: ['100% Normandy Flax Linen', 'Inner Viscose Lining', 'Natural Horn Buttons'],
@@ -45,12 +45,12 @@ export const PRODUCTS: Product[] = [
       { name: 'Sage Olive', hex: '#7A8471' }
     ],
     sizes: ['XS', 'S', 'M', 'L'],
-    primaryImage: '/src/assets/images/women_silk_dress_1794217084262.jpg',
-    secondaryImage: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1000&auto=format&fit=crop',
+    primaryImage: '/images/women-silk-dress-primary.webp',
+    secondaryImage: '/images/silk-dress-secondary.webp',
     gallery: [
-      '/src/assets/images/women_silk_dress_1794217084262.jpg',
-      'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1000&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop'
+      '/images/women-silk-dress-primary.webp',
+      '/images/silk-dress-secondary.webp',
+      '/images/silk-dress-gallery-3.webp'
     ],
     description: 'Fluid bias-cut midi dress cut from 100% 22-momme Mulberry silk. Designed with a gentle cowl neckline, low scoop back, and asymmetric drape that glides effortlessly.',
     composition: ['100% Grade 6A Mulberry Silk', 'Self-Lined Bust Layer'],
@@ -74,12 +74,12 @@ export const PRODUCTS: Product[] = [
       { name: 'Sky Blue', hex: '#B8C6D9' }
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    primaryImage: '/src/assets/images/lookbook_men_collection_1794217069603.jpg',
-    secondaryImage: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=1000&auto=format&fit=crop',
+    primaryImage: '/images/lookbook-men-collection.webp',
+    secondaryImage: '/images/linen-shirt-secondary.webp',
     gallery: [
-      '/src/assets/images/lookbook_men_collection_1794217069603.jpg',
-      'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=1000&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?q=80&w=1000&auto=format&fit=crop'
+      '/images/lookbook-men-collection.webp',
+      '/images/linen-shirt-secondary.webp',
+      '/images/linen-shirt-gallery-3.webp'
     ],
     description: 'A perennial wardrobe anchor woven in Normandy. Enzyme-washed for an authentic lived-in texture, detailed with Australian mother-of-pearl buttons and relaxed drop shoulders.',
     composition: ['100% Organic French Linen', 'Australian Shell Buttons'],
@@ -104,12 +104,12 @@ export const PRODUCTS: Product[] = [
       { name: 'Midnight Navy', hex: '#1E2430' }
     ],
     sizes: ['30', '32', '34', '36'],
-    primaryImage: 'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?q=80&w=1000&auto=format&fit=crop',
-    secondaryImage: '/src/assets/images/lookbook_men_collection_1794217069603.jpg',
+    primaryImage: '/images/wool-trousers-primary.webp',
+    secondaryImage: '/images/lookbook-men-collection.webp',
     gallery: [
-      'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?q=80&w=1000&auto=format&fit=crop',
-      '/src/assets/images/lookbook_men_collection_1794217069603.jpg',
-      'https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=1000&auto=format&fit=crop'
+      '/images/wool-trousers-primary.webp',
+      '/images/lookbook-men-collection.webp',
+      '/images/wool-trousers-gallery-3.webp'
     ],
     description: 'Tailored with double forward pleats and a relaxed tapered leg. Features an adjustable side tab waistband, horn buttons, and high-rise design for architectural drape.',
     composition: ['70% Tropical Wool', '30% Tencel Fine Twill'],
@@ -133,11 +133,11 @@ export const PRODUCTS: Product[] = [
       { name: 'Washed Charcoal', hex: '#3B3B3B' }
     ],
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    primaryImage: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1000&auto=format&fit=crop',
-    secondaryImage: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1000&auto=format&fit=crop',
+    primaryImage: '/images/cotton-tee-primary.webp',
+    secondaryImage: '/images/cotton-tee-secondary.webp',
     gallery: [
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1000&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1000&auto=format&fit=crop'
+      '/images/cotton-tee-primary.webp',
+      '/images/cotton-tee-secondary.webp'
     ],
     description: 'Crafted from 280 GSM combed organic cotton. Built with a structured ribbed collar, blind-stitched hems, and a relaxed boxy cut that retains shape wash after wash.',
     composition: ['100% GOTS Certified Organic Cotton', 'Pre-shrunk fabric'],
@@ -162,11 +162,11 @@ export const PRODUCTS: Product[] = [
       { name: 'Mocha', hex: '#7D695D' }
     ],
     sizes: ['S', 'M', 'L'],
-    primaryImage: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1000&auto=format&fit=crop',
-    secondaryImage: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1000&auto=format&fit=crop',
+    primaryImage: '/images/coord-set-primary.webp',
+    secondaryImage: '/images/coord-set-secondary.webp',
     gallery: [
-      'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1000&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1000&auto=format&fit=crop'
+      '/images/coord-set-primary.webp',
+      '/images/coord-set-secondary.webp'
     ],
     description: 'A two-piece ensemble featuring an asymmetrical wrap top and wide-leg trousers. Designed for effortless transitional elegance from daylight meetings to evening soirees.',
     composition: ['85% Flax Linen', '15% Fine Silk Weave'],
@@ -189,11 +189,11 @@ export const PRODUCTS: Product[] = [
       { name: 'Charcoal Noir', hex: '#242424' }
     ],
     sizes: ['S', 'M', 'L', 'XL'],
-    primaryImage: '/src/assets/images/hero_editorial_campaign_1794217069077.jpg',
-    secondaryImage: '/src/assets/images/tailored_linen_jacket_1794217084028.jpg',
+    primaryImage: '/images/hero-editorial-campaign.webp',
+    secondaryImage: '/images/tailored-linen-jacket-primary.webp',
     gallery: [
-      '/src/assets/images/hero_editorial_campaign_1794217069077.jpg',
-      '/src/assets/images/tailored_linen_jacket_1794217084028.jpg'
+      '/images/hero-editorial-campaign.webp',
+      '/images/tailored-linen-jacket-primary.webp'
     ],
     description: 'An architectural minimalist trench engineered from a lightweight wool-tencel drape. Unlined for fluid movement, with raglan sleeves, welt pockets, and a back storm flap.',
     composition: ['60% Merino Wool', '40% Tencel Lyocell'],
@@ -217,11 +217,11 @@ export const PRODUCTS: Product[] = [
       { name: 'Deep Charcoal', hex: '#333333' }
     ],
     sizes: ['S', 'M', 'L'],
-    primaryImage: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?q=80&w=1000&auto=format&fit=crop',
-    secondaryImage: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=1000&auto=format&fit=crop',
+    primaryImage: '/images/cardigan-primary.webp',
+    secondaryImage: '/images/cardigan-secondary.webp',
     gallery: [
-      'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?q=80&w=1000&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=1000&auto=format&fit=crop'
+      '/images/cardigan-primary.webp',
+      '/images/cardigan-secondary.webp'
     ],
     description: 'Spun from fine Mongolian cashmere and extra-fine merino wool. Features a deep V-neck, horn button closure, and exaggerated ribbed cuffs for cozy luxury.',
     composition: ['30% Mongolian Cashmere', '70% Extra Fine Merino Wool'],
@@ -245,11 +245,11 @@ export const PRODUCTS: Product[] = [
       { name: 'Onyx Black', hex: '#1F1F1F' }
     ],
     sizes: ['XS', 'S', 'M', 'L'],
-    primaryImage: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1000&auto=format&fit=crop',
-    secondaryImage: '/src/assets/images/women_silk_dress_1794217084262.jpg',
+    primaryImage: '/images/coord-set-primary.webp',
+    secondaryImage: '/images/women-silk-dress-primary.webp',
     gallery: [
-      'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1000&auto=format&fit=crop',
-      '/src/assets/images/women_silk_dress_1794217084262.jpg'
+      '/images/coord-set-primary.webp',
+      '/images/women-silk-dress-primary.webp'
     ],
     description: 'High-waisted fluid trousers featuring clean front darts, concealed hook-and-eye closure, and sweeping wide legs tailored for fluid movement.',
     composition: ['100% Belgian Flax Linen'],
@@ -273,11 +273,11 @@ export const PRODUCTS: Product[] = [
       { name: 'Steel Blue', hex: '#6B7A8D' }
     ],
     sizes: ['XS', 'S', 'M', 'L'],
-    primaryImage: 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?q=80&w=1000&auto=format&fit=crop',
-    secondaryImage: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=1000&auto=format&fit=crop',
+    primaryImage: '/images/linen-shirt-gallery-3.webp',
+    secondaryImage: '/images/linen-shirt-secondary.webp',
     gallery: [
-      'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?q=80&w=1000&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=1000&auto=format&fit=crop'
+      '/images/linen-shirt-gallery-3.webp',
+      '/images/linen-shirt-secondary.webp'
     ],
     description: 'Crisp 80s two-ply cotton poplin tailored with an architectural grandfather collar, step hem, and extended French cuffs.',
     composition: ['100% Egyptian Giza Cotton Poplin'],
@@ -301,11 +301,11 @@ export const PRODUCTS: Product[] = [
       { name: 'Charcoal Black', hex: '#2B2B2B' }
     ],
     sizes: ['30', '32', '34', '36'],
-    primaryImage: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1000&auto=format&fit=crop',
-    secondaryImage: 'https://images.unsplash.com/photo-1542272604-780c96856592?q=80&w=1000&auto=format&fit=crop',
+    primaryImage: '/images/denim-primary.webp',
+    secondaryImage: '/images/denim-secondary.webp',
     gallery: [
-      'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1000&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1542272604-780c96856592?q=80&w=1000&auto=format&fit=crop'
+      '/images/denim-primary.webp',
+      '/images/denim-secondary.webp'
     ],
     description: '14oz selvedge denim woven on vintage shuttle looms. Unwashed raw finish designed to break in custom to your body over time.',
     composition: ['100% Okayama Selvedge Cotton'],
@@ -329,11 +329,11 @@ export const PRODUCTS: Product[] = [
       { name: 'Champagne', hex: '#E5D6C4' }
     ],
     sizes: ['XS', 'S', 'M', 'L'],
-    primaryImage: 'https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?q=80&w=1000&auto=format&fit=crop',
-    secondaryImage: '/src/assets/images/women_silk_dress_1794217084262.jpg',
+    primaryImage: '/images/satin-slip-primary.webp',
+    secondaryImage: '/images/women-silk-dress-primary.webp',
     gallery: [
-      'https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?q=80&w=1000&auto=format&fit=crop',
-      '/src/assets/images/women_silk_dress_1794217084262.jpg'
+      '/images/satin-slip-primary.webp',
+      '/images/women-silk-dress-primary.webp'
     ],
     description: 'Lightweight silk satin slip top featuring an angled cowl neckline and delicate adjustable shoulder straps. Perfect for versatile layering.',
     composition: ['70% Mulberry Silk', '30% Rayon Satin'],
